@@ -1,6 +1,13 @@
+using Portfolio.Web.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+//IOS Container-Lifetime Türleri
+
+builder.Services.AddScoped<PortfolioContext>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
