@@ -5,29 +5,39 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@await Component.InvokeAsync("_AdminLayoutHeadComponent")
+
+    @* Head kısmı: title, css vb. *@
+    @await Component.InvokeAsync("_AdminLayoutHeadComponent")
+
 
 <body data-pc-preset="preset-1" data-pc-direction="ltr" data-pc-theme="light">
 
+    @* Sayfa yüklenirken gösterilecek preloader *@
     @await Component.InvokeAsync("_AdminLayoutPreLoaderComponent")
 
+    @* Yan menü *@
     @await Component.InvokeAsync("_AdminLayoutSidebarComponent")
 
+    @* Üst header *@
     @await Component.InvokeAsync("_AdminLayoutHeaderComponent")
 
     <div class="pc-container">
         <div class="pc-content">
 
+            @* Breadcrumb navigasyonu *@
             @await Component.InvokeAsync("_AdminLayoutBreadCrumbComponent")
 
+            @* Sayfa içeriği burada render edilecek *@
             @RenderBody()
 
         </div>
     </div>
 
+    @* Footer *@
     @await Component.InvokeAsync("_AdminLayoutFooterComponent")
 
+    @* Script dosyaları *@
     @await Component.InvokeAsync("_AdminLayoutScriptsComponent")
- 
+
 </body>
 </html>
