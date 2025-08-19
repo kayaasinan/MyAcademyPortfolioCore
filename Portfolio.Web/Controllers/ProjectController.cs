@@ -33,15 +33,40 @@ namespace Portfolio.Web.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult CreateProject(Project project)
+        public IActionResult CreateProject(Project model)
         {
             CategoryDropDown();
 
             if (!ModelState.IsValid)
             {
-                return View(project);
+                return View(model);
             }
-            context.Projects.Add(project);
+            context.Projects.Add(model);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public IActionResult UpdateProject(int id)
+        {
+            CategoryDropDown();
+            var project = context.Projects.Find(id);
+            return View(project);
+        }
+        [HttpPost]
+        public IActionResult UpdateProject(Project model)
+        {
+            CategoryDropDown();
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            context.Projects.Update(model);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public IActionResult DeleteProject(int id)
+        {
+            var project = context.Projects.Find(id);
+            context.Remove(project);
             context.SaveChanges();
             return RedirectToAction("Index");
         }
