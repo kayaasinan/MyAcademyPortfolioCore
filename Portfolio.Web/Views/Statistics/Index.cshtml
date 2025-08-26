@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewData["Title"] = "İstatistikler";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="row">
+<div class="col-md-6 col-xl-3">
+    <div class="card social-widget-card bg-info">
+        <div class="card-body">
+                <h3 class="text-white m-0">Proje Sayısı</h3>
+            <span class="m-t-10">@ViewBag.projectCount</span>
+        </div>
+    </div>
+</div>
+<div class="col-md-6 col-xl-3">
+    <div class="card social-widget-card bg-dark">
+        <div class="card-body">
+            <h3 class="text-white m-0">Yetenek Ortalaması</h3>
+                <span class="m-t-10">@ViewBag.skillAverage</span>
+        </div>
+    </div>
+</div>
+<div class="col-md-6 col-xl-3">
+    <div class="card social-widget-card bg-primary">
+        <div class="card-body">
+                <h3 class="text-white m-0">Okunmamış Mesaj Sayısı</h3>
+                <span class="m-t-10">@ViewBag.unreadMessageCount</span>
+        </div>
+    </div>
+</div>
+<div class="col-md-6 col-xl-3">
+    <div class="card social-widget-card bg-success">
+        <div class="card-body">
+                <h3 class="text-white m-0">Son Mesaj Gönderen Kişi</h3>
+                <span class="m-t-10">@ViewBag.lastMessageOwner</span>
+        </div>
+    </div>
+</div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-success">
+            <div class="card-body">
+                <h3 class="text-white m-0">Deneyim Yılı</h3>
+                <span class="m-t-10"> @ViewBag.experienceYear</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-info">
+            <div class="card-body">
+                <h3 class="text-white m-0">Çalıştığım Toplam Şirket</h3>
+                <span class="m-t-10"> @ViewBag.comnpanyCount</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-dark">
+            <div class="card-body">
+                <h3 class="text-white m-0">Değerlendirme Ortalaması</h3>
+                <span class="m-t-10"> @ViewBag.reviewAverage</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-primary">
+            <div class="card-body">
+                <h3 class="text-white m-0">En Yüksek Değerlerdiren</h3>
+                <span class="m-t-10"> @ViewBag.maxReviewOwner</span>
+            </div>
+        </div>
+    </div>
+</div>
+

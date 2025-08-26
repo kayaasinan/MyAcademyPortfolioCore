@@ -3,32 +3,32 @@
 *@
 
 <div class="col-lg-7">
-    <form method="post" asp-action="SendMessage" asp-controller="Default" data-aos="fade-up" data-aos-delay="200">
+    <form method="post" asp-action="SendMessage" asp-controller="Default" data-aos="fade-up" data-aos-delay="200" onsubmit="return sendMessage()" novalidate>
         <div class="row gy-4">
 
             <div class="col-md-6">
                 <label for="name-field" class="pb-2">Adınız</label>
-                <input type="text" name="Name" class="form-control" required="">
+                <input type="text" id="name" name="Name" class="form-control">
             </div>
 
             <div class="col-md-6">
                 <label for="email-field" class="pb-2">Email Adresiniz</label>
-                <input type="email" class="form-control" name="Email" required="">
+                <input type="email" id="email" class="form-control" name="Email">
             </div>
 
             <div class="col-md-12">
                 <label for="subject-field" class="pb-2">Konu</label>
-                <input type="text" class="form-control" name="Subject" required="">
+                <input type="text" id="subject" class="form-control" name="Subject">
             </div>
 
             <div class="col-md-12">
                 <label for="message-field" class="pb-2">Mesajınız</label>
-                <textarea class="form-control" name="MessageBody" rows="10" required=""></textarea>
+                <textarea class="form-control" id="message" name="MessageBody" rows="10"></textarea>
             </div>
 
             <div class="col-md-12 text-center">
 
-                <button class="btn btn-outline-primary" type="submit" onclick="sendMessage()">Mesajı Gönder</button>
+                <button class="btn btn-outline-primary" type="submit" >Mesajı Gönder</button>
             </div>
 
         </div>
@@ -37,11 +37,26 @@
 
 <script>
     function sendMessage() {
-      Swal.fire({
-        title: "Mesajınız başarıyla gönderildi",
-        icon: "success",
-        confirmButtonText: "Tamam",
-        draggable: true
-      });
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let subject = document.getElementById("subject").value.trim();
+        let message = document.getElementById("message").value.trim();
+
+        if (name === "" || email === "" || subject === "" || message === "") {
+            Swal.fire({
+                title: "Lütfen tüm alanları doldurun",
+                icon: "error",
+                confirmButtonText: "Tamam"
+            });
+            return false; 
+        }
+
+        Swal.fire({
+            title: "Mesajınız başarıyla gönderildi",
+            icon: "success",
+            confirmButtonText: "Tamam"
+        });
+
+        return true;
     }
 </script>
