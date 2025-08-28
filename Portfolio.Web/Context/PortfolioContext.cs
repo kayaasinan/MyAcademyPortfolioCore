@@ -9,6 +9,9 @@ namespace Portfolio.Web.Context
         {
             optionsBuilder.UseSqlServer("server=SINAN; database=MyAcademyPortfolioDb; integrated security=true; trustServerCertificate=true");
         }
+
+
+
         //pluralize çoğullaştırma
         //singularize tekilleştirme
         public DbSet<About> Abouts { get; set; }
@@ -21,6 +24,7 @@ namespace Portfolio.Web.Context
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<UserMessage> UserMessages { get; set; }
         public DbSet<ContactInfo> ContactInfos { get; set; }
+        public DbSet<User> Users { get; set; }
 
 
     }
