@@ -1,0 +1,48 @@
+﻿@model Experience
+@{
+    ViewData["Title"] = "Yeni Deneyim Oluştur";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<form method="post">
+    <div class="row g-3">
+
+        <div class="col-md-6">
+            <label asp-for="Title" class="form-label">Ünvan</label>
+            <input type="text" class="form-control" asp-for="Title" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="StartYear" class="form-label">Başlama Yılı</label>
+            <input type="text" class="form-control" asp-for="StartYear" />
+            <span asp-validation-for="StartYear" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="EndYear" class="form-label">Bitiş Yılı</label>
+            <input type="text" class="form-control" asp-for="EndYear" />
+            <span asp-validation-for="EndYear" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Company" class="form-label">Şirket Adı</label>
+            <input type="text" class="form-control" asp-for="Company" />
+            <span asp-validation-for="Company" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="City" class="form-label">Şehir</label>
+            <input type="text" class="form-control" asp-for="City" />
+            <span asp-validation-for="City" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Description" class="form-label">Açıklama</label>
+            <input type="text" class="form-control" asp-for="Description" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-outline-primary">Oluştur</button>
+        </div>
+
+    </div>
+</form>
+

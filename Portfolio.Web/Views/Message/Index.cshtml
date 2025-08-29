@@ -1,0 +1,58 @@
+﻿@model List<UserMessage>
+@{
+    ViewData["Title"] = "Admin Mesaj Sayfası";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    @foreach(var item in Model){
+    <div class="message-in">
+        <div class="d-flex">
+            <div class="d-flex">
+                <div class="d-flex align-items-center justify-content-center rounded-circle bg-light"
+                     style="width:50px; height:50px;">
+                    <i class="fa-solid fa-envelope text-primary" style="font-size:22px;"></i>
+                </div>
+            </div>
+           
+            <i class="fa-solid fa-comment-dots text-primary fs-5"></i>
+            <div class="flex-grow-1 mx-3">
+                <div class="msg-content">
+                    <p class="mb-0">
+                        <strong>@item.Name</strong> - @item.Subject
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="message-out">
+        <div class="d-flex">
+            <div class="flex-shrink-0">
+                <ul class="list-inline ms-auto mb-0">
+                    <li class="list-inline-item">
+                        <div class="dropdown">
+                            <a class="avtar avtar-xs btn-link-secondary dropdown-toggle arrow-none" href="#"
+                               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            
+                            </a>
+                        </div>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="avtar avtar-xs btn-link-secondary">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex-grow-1 mx-3">
+                <div class="msg-content bg-primary">
+                    <p class="mb-0">@item.MessageBody</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</body>
+</html>
+

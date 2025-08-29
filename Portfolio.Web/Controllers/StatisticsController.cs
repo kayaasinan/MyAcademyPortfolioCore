@@ -15,7 +15,7 @@ namespace Portfolio.Web.Controllers
 
             var startYear = context.Experiences.Min(x => x.StartYear);
             ViewBag.experienceYear= DateTime.Now.Year-startYear;
-            ViewBag.comnpanyCount=context.Experiences.Select(x=>x.Company).Distinct().Count();
+            ViewBag.companyCount=context.Experiences.Select(x=>x.Company).Distinct().Count();
             ViewBag.reviewAverage = context.Testimonials.Any() ? context.Testimonials.Average(x => x.Review).ToString("0.0") : "Değerlendirme Yapılmadı";
             ViewBag.maxReviewOwner = context.Testimonials.Any() ? context.Testimonials.OrderByDescending(x => x.Review).Select(x => x.Name).FirstOrDefault() : null;
 

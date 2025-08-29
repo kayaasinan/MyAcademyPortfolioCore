@@ -1,0 +1,30 @@
+﻿@model Skill
+@{
+    ViewData["Title"] = "Yetenek Güncelle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<form method="post">
+    <div class="row g-3">
+
+        <div class="col-md-6">
+            <input type="hidden" asp-for="SkillId" />
+            <label asp-for="Title" class="form-label">Yetenek</label>
+            <input type="text" class="form-control" asp-for="Title" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="Percentage" class="form-label">Oran</label>
+            <input type="text" class="form-control" asp-for="Percentage" />
+            <span asp-validation-for="Percentage" class="text-danger"></span>
+        </div>
+
+        <div class="col-12 mb-3">
+            <button type="submit" class="btn btn-outline-primary">Güncelle</button>
+        </div>
+
+
+    </div>
+</form>
+

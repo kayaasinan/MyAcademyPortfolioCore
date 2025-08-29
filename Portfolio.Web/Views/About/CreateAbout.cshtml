@@ -1,0 +1,60 @@
+﻿@model About
+@{
+    ViewData["Title"] = "Yeni Hakkında Oluştur";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+
+<form method="post">
+    <div class="row g-3">
+
+        <div class="col-md-6">
+            <label asp-for="ImageUrl" class="form-label">Görsel Url</label>
+            <input type="text" class="form-control" asp-for="ImageUrl" />
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="Title" class="form-label">Ünvan</label>
+            <input type="text" class="form-control" asp-for="Title" />
+        </div>
+
+        <div class="col-12">
+            <label asp-for="Description" class="form-label">Açıklama</label>
+            <textarea class="form-control" asp-for="Description" rows="3"></textarea>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="BirthDate" class="form-label">Doğum Günü</label>
+            <input type="date" class="form-control" asp-for="BirthDate" />
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="WebSite" class="form-label">Web Site</label>
+            <input type="text" class="form-control" asp-for="WebSite" />
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="PhoneNumber" class="form-label">Telefon</label>
+            <input type="text" class="form-control" asp-for="PhoneNumber" />
+        </div>
+        <div class="col-md-6">
+            <label asp-for="City" class="form-label">Şehir</label>
+            <input type="text" class="form-control" asp-for="City" />
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="Graduation" class="form-label">Mezuniyet</label>
+            <input type="text" class="form-control" asp-for="Graduation" />
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" asp-for="Email" />
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Oluştur</button>
+        </div>
+
+    </div>
+</form>
+
