@@ -18,6 +18,12 @@ namespace Portfolio.Web.Controllers
             ViewBag.companyCount=context.Experiences.Select(x=>x.Company).Distinct().Count();
             ViewBag.reviewAverage = context.Testimonials.Any() ? context.Testimonials.Average(x => x.Review).ToString("0.0") : "Değerlendirme Yapılmadı";
             ViewBag.maxReviewOwner = context.Testimonials.Any() ? context.Testimonials.OrderByDescending(x => x.Review).Select(x => x.Name).FirstOrDefault() : null;
+            ViewBag.totalMessageCount = context.UserMessages.Count();
+            ViewBag.latestProjectName = context.Projects.OrderByDescending(x => x.ProjectId).Select(x => x.ProjectName).FirstOrDefault();
+            ViewBag.totalTestimonialCount = context.Testimonials.Count();
+            ViewBag.longestCommentOwner = context.Testimonials.OrderByDescending(x => x.Comment.Length).Select(x => x.Name).FirstOrDefault();
+
+
 
             return View();
         }

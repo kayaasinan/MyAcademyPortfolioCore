@@ -1,0 +1,31 @@
+﻿@model SocialMedia
+@{
+    ViewData["Title"] = "Sosyal Medya Bilgisi Güncelle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<form method="post">
+    <div class="row g-3">
+        <input type="hidden" asp-for="SocialMediaId" />
+        <div class="col-md-6">
+            <label asp-for="PlatformName" class="form-label">Platform Adı</label>
+            <input type="text" class="form-control" asp-for="PlatformName" />
+            <span asp-validation-for="PlatformName" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="PlatformUrl" class="form-label">Platform Url</label>
+            <input type="text" class="form-control" asp-for="PlatformUrl" />
+            <span asp-validation-for="PlatformUrl" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="PlatformIcon" class="form-label">Platform İkonu</label>
+            <input type="text" class="form-control" asp-for="PlatformIcon" />
+            <span asp-validation-for="PlatformIcon" class="text-danger"></span>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-outline-primary">Güncelle</button>
+        </div>
+    </div>
+</form>
+

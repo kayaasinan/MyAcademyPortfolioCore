@@ -1,0 +1,31 @@
+﻿@model UserMessage
+@*
+    Pop-Up Modal
+*@
+
+
+
+<div class="p-3">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="modal-title">@Model.Subject</h5>
+        <span class="badge @(Model.IsRead ? "bg-success" : "bg-warning")">
+            @(Model.IsRead ? "Okundu" : "Okunmadı")
+        </span>
+    </div>
+
+    <p><strong>Gönderen:</strong> @Model.Name</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <hr />
+    <p style="white-space: pre-wrap;">@Model.MessageBody</p>
+    <div class="d-flex justify-content-end mt-4">
+        <button type="button" class="btn btn-secondary" onclick="closeAndRefresh()">
+            Çıkış Yap
+        </button>
+    </div>
+</div>
+
+<script>
+    function closeAndRefresh() {
+        location.reload();
+    }
+</script>

@@ -1,0 +1,44 @@
+﻿@model Testimonial
+@{
+    ViewData["Title"] = "Referans Oluştur";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<form method="post">
+    <div class="row g-3">
+
+        <div class="col-md-6">
+            <label asp-for="ImageUrl" class="form-label">Görsel</label>
+            <input type="text" class="form-control" asp-for="ImageUrl" />
+            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="Name" class="form-label">Ad Soyad</label>
+            <input type="text" class="form-control" asp-for="Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Title" class="form-label">Ünvan</label>
+            <input type="text" class="form-control" asp-for="Title" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Comment" class="form-label">İçerik</label>
+            <input type="text" class="form-control" asp-for="Comment" />
+            <span asp-validation-for="Comment" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Review" class="form-label">Değerlendirme</label>
+            <input type="text" class="form-control" asp-for="Review" />
+            <span asp-validation-for="Review" class="text-danger"></span>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-outline-primary">Oluştur</button>
+        </div>
+
+    </div>
+</form>
+
+

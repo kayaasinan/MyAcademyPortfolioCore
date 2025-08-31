@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Hesap Şifresi Değiştir";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label for="oldPassword" class="form-label">Eski Şifre</label>
+        <input type="password" class="form-control" id="oldPassword" name="oldPassword" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="newPassword" class="form-label">Yeni Şifre</label>
+        <input type="password" class="form-control" id="newPassword" name="newPassword" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
+
+@if (ViewBag.Success != null)
+{
+    <div class="alert alert-success mt-3">@ViewBag.Success</div>
+}
+
+@foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+{
+    <div class="alert alert-danger mt-2">@error.ErrorMessage</div>
+}
+

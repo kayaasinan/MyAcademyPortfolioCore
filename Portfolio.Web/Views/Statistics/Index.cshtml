@@ -1,47 +1,54 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "İstatistikler";
     Layout = "~/Views/AdminLayout/Layout.cshtml";
 }
 
 <div class="row">
-<div class="col-md-6 col-xl-3">
-    <div class="card social-widget-card bg-info">
-        <div class="card-body">
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-info">
+            <div class="card-body">
                 <h3 class="text-white m-0">Proje Sayısı</h3>
-            <span class="m-t-10">@ViewBag.projectCount</span>
+                <span class="m-t-10">@ViewBag.projectCount</span>
+                <i class="fa-solid fa-diagram-project"></i>
+
+            </div>
         </div>
     </div>
-</div>
-<div class="col-md-6 col-xl-3">
-    <div class="card social-widget-card bg-dark">
-        <div class="card-body">
-            <h3 class="text-white m-0">Yetenek Ortalaması</h3>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-dark">
+            <div class="card-body">
+                <h3 class="text-white m-0">Yetenek Ortalaması</h3>
                 <span class="m-t-10">@ViewBag.skillAverage</span>
+                <i class="fa-solid fa-chart-bar"></i>
+
+            </div>
         </div>
     </div>
-</div>
-<div class="col-md-6 col-xl-3">
-    <div class="card social-widget-card bg-primary">
-        <div class="card-body">
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-primary">
+            <div class="card-body">
                 <h3 class="text-white m-0">Okunmamış Mesaj Sayısı</h3>
                 <span class="m-t-10">@ViewBag.unreadMessageCount</span>
+                <i class="fa-solid fa-envelope-open-text"></i>
+
+            </div>
         </div>
     </div>
-</div>
-<div class="col-md-6 col-xl-3">
-    <div class="card social-widget-card bg-success">
-        <div class="card-body">
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-success">
+            <div class="card-body">
                 <h3 class="text-white m-0">Son Mesaj Gönderen Kişi</h3>
                 <span class="m-t-10">@ViewBag.lastMessageOwner</span>
+                <i class="fa-solid fa-user-circle"></i>
+            </div>
         </div>
     </div>
-</div>
     <div class="col-md-6 col-xl-3">
         <div class="card social-widget-card bg-success">
             <div class="card-body">
                 <h3 class="text-white m-0">Deneyim Yılı</h3>
                 <span class="m-t-10"> @ViewBag.experienceYear</span>
+                <i class="fa-solid fa-briefcase"></i>
             </div>
         </div>
     </div>
@@ -50,6 +57,7 @@
             <div class="card-body">
                 <h3 class="text-white m-0">Çalıştığım Toplam Şirket</h3>
                 <span class="m-t-10"> @ViewBag.companyCount</span>
+                <i class="fa-solid fa-building"></i>
             </div>
         </div>
     </div>
@@ -58,6 +66,7 @@
             <div class="card-body">
                 <h3 class="text-white m-0">Değerlendirme Ortalaması</h3>
                 <span class="m-t-10"> @ViewBag.reviewAverage</span>
+                <i class="fa-solid fa-star-half-stroke"></i>
             </div>
         </div>
     </div>
@@ -66,8 +75,46 @@
             <div class="card-body">
                 <h3 class="text-white m-0">En Yüksek Değerlerdiren</h3>
                 <span class="m-t-10"> @ViewBag.maxReviewOwner</span>
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-dark">
+            <div class="card-body">
+                <h3 class="text-white m-0">Toplam Mesaj Sayısı</h3>
+                <span class="m-t-10"> @ViewBag.totalMessageCount</span>
+                <i class="fa-solid fa-comments"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-primary">
+            <div class="card-body">
+                <h3 class="text-white m-0">En Yeni Proje</h3>
+                <span class="m-t-10"> @ViewBag.latestProjectName </span>
+                <i class="fa-brands fa-github"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-success">
+            <div class="card-body">
+                <h3 class="text-white m-0">Toplam Yorum Sayısı</h3>
+                <span class="m-t-10"> @ViewBag.totalTestimonialCount</span>
+                <i class="fa-solid fa-comment-dots"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card social-widget-card bg-info">
+            <div class="card-body">
+                <h3 class="text-white m-0">En Uzun Yorum Yapan</h3>
+                <span class="m-t-10"> @ViewBag.longestCommentOwner</span>
+                <i class="fa-solid fa-align-left"></i>
             </div>
         </div>
     </div>
 </div>
+
 

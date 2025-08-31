@@ -51,8 +51,11 @@ namespace Portfolio.Web.Controllers
         public IActionResult DeleteAbout(int id)
         {
             var values = context.Abouts.Find(id);
-            context.Abouts.Remove(values);
-            context.SaveChanges();
+            if (values != null)
+            {
+                context.Abouts.Remove(values);
+                context.SaveChanges();
+            }
             return RedirectToAction("Index");
         }
     }

@@ -157,9 +157,11 @@ namespace Portfolio.Web.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EndYear")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SchoolName")
@@ -195,6 +197,7 @@ namespace Portfolio.Web.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EndYear")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("StartYear")
@@ -261,6 +264,31 @@ namespace Portfolio.Web.Migrations
                     b.HasKey("SkillId");
 
                     b.ToTable("Skills");
+                });
+
+            modelBuilder.Entity("Portfolio.Web.Entities.SocialMedia", b =>
+                {
+                    b.Property<int>("SocialMediaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SocialMediaId"));
+
+                    b.Property<string>("PlatformIcon")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PlatformName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PlatformUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("SocialMediaId");
+
+                    b.ToTable("SocialMedias");
                 });
 
             modelBuilder.Entity("Portfolio.Web.Entities.Testimonial", b =>

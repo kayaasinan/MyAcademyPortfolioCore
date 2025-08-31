@@ -1,0 +1,32 @@
+﻿@model Banner
+@{
+    ViewData["Title"] = "Öne Çıkan Oluştur";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<form method="post">
+    <div class="row g-3">
+
+        <div class="col-md-6">
+            <label asp-for="CoverImageUrl" class="form-label">Görsel</label>
+            <input type="text" class="form-control" asp-for="CoverImageUrl" />
+            <span asp-validation-for="CoverImageUrl" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="NameSurname" class="form-label">Ad Soyad</label>
+            <input type="text" class="form-control" asp-for="NameSurname" />
+            <span asp-validation-for="NameSurname" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Title" class="form-label">Ünvan</label>
+            <input type="text" class="form-control" asp-for="Title" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-outline-primary">Oluştur</button>
+        </div>
+
+    </div>
+</form>
+
