@@ -1,5 +1,10 @@
 ﻿@model List<Skill>
 
+@{
+    var leftSkills = Model.Where((x, index) => index % 2 == 0).ToList();
+    var rightSkills = Model.Where((x, index) => index % 2 != 0).ToList();
+}
+
 <section id="skills" class="skills section">
     <div class="container section-title" data-aos="fade-up">
         <h2>Yeteneklerim</h2>
@@ -8,39 +13,30 @@
     <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row skills-content skills-animation">
             <div class="col-lg-6">
-                @{
-                    int i = 0;
-                }
-                @foreach (var item in Model)
+                @for (int i = 0; i < leftSkills.Count; i++)
                 {
-                    if (i % 2 == 0)
-                    {
-                        <div class="progress" data-aos="fade-up" data-aos-delay="@((i + 1) * 50)">
-                            <span class="skill"><span>@item.Title</span> <i class="val">@item.Percentage%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" style="width:@item.Percentage%" aria-valuenow="@item.Percentage" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                    var item = leftSkills[i];
+                    <div class="progress" data-aos="fade-up" data-aos-delay="@((i + 1) * 50)">
+                        <span class="skill"><span>@item.Title</span> <i class="val">@item.Percentage%</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" style="width:@item.Percentage%" aria-valuenow="@item.Percentage" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                    }
-                    i++;
+                    </div>
+                }
+            </div>
+            <div class="col-lg-6">
+                @for (int i = 0; i < rightSkills.Count; i++)
+                {
+                    var item = rightSkills[i];
+                    <div class="progress" data-aos="fade-up" data-aos-delay="@((i + 1) * 50)">
+                        <span class="skill"><span>@item.Title</span> <i class="val">@item.Percentage%</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" style="width:@item.Percentage%" aria-valuenow="@item.Percentage" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
                 }
             </div>
 
-            <div class="col-lg-6">
-                @foreach (var item in Model)
-                {
-                    if (i % 2 != 0)
-                    {
-                        <div class="progress" data-aos="fade-up" data-aos-delay="@((i + 1) * 50)">
-                            <span class="skill"><span>@item.Title</span> <i class="val">@item.Percentage%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" style="width:@item.Percentage%" aria-valuenow="@item.Percentage" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    }
-                    i++;
-                }
-            </div>
         </div>
     </div>
 </section>
