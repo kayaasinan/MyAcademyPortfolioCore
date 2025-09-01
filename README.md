@@ -20,4 +20,26 @@ Bu proje, klasik CV anlayışını bir adım öteye taşıyarak, ASP.NET Core MV
 
 ### 📸 Ekran Görüntüleri
 
-![Screenshot](imagesSS/ss1.png)
+**🏠 Home Sayfası**  
+![Home](https://github.com/kayaasinan/MyAcademyPortfolioCore/blob/master/Portfolio.Web/imagesSS/ss1.png?raw=true)
+
+**💡 Yeteneklerim (Skills)**  
+![Skills](https://github.com/kayaasinan/MyAcademyPortfolioCore/blob/master/Portfolio.Web/imagesSS/ss2.png?raw=true)
+
+**📩 İletişim (Contact)**  
+![Contact](https://github.com/kayaasinan/MyAcademyPortfolioCore/blob/master/Portfolio.Web/imagesSS/ss3.png?raw=true)
+
+**🔑 Giriş (Login)**  
+![Login](https://github.com/kayaasinan/MyAcademyPortfolioCore/blob/master/Portfolio.Web/imagesSS/ss4.png?raw=true)
+
+**📬 Admin Mesajları**  
+![Admin-Messages](https://github.com/kayaasinan/MyAcademyPortfolioCore/blob/master/Portfolio.Web/imagesSS/ss5.png?raw=true)
+
+**📊 İstatistikler (Statistics)**  
+![Statistics](https://github.com/kayaasinan/MyAcademyPortfolioCore/blob/master/Portfolio.Web/imagesSS/ss6.png?raw=true)
+
+**📁 Projeler (Project)**  
+![Project](https://github.com/kayaasinan/MyAcademyPortfolioCore/blob/master/Portfolio.Web/imagesSS/ss7.png?raw=true)
+
+**🛠 Admin Yetenek Yönetimi (Admin-Skills)**  
+![Admin-Skills](https://github.com/kayaasinan/MyAcademyPortfolioCore/blob/master/Portfolio.Web/imagesSS/ss8.png?raw=true)
